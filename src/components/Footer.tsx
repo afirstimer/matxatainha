@@ -11,7 +11,7 @@ export const Footer = () => {
                         <div className="flex items-center gap-2">
                             <Sparkles className="h-8 w-8 text-glow-primary" />
                             <span className="text-2xl font-bold text-glow-primary">
-                                Glow
+                                Reelax
                             </span>
                         </div>
                         <p className="text-background/80">
@@ -85,7 +85,7 @@ export const Footer = () => {
                 <div className="border-t border-background/20 mt-12 pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <p className="text-background/60 text-sm">
-                            © 2024 Glow Vietnam. Tất cả quyền được bảo lưu.
+                            © 2025 Reelax Vietnam. Tất cả quyền được bảo lưu.
                         </p>
                         <div className="flex gap-6 text-sm text-background/60">
                             <a href="#" className="hover:text-glow-primary transition-colors">Điều khoản</a>
