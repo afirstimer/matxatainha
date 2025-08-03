@@ -5,6 +5,7 @@ import { MapPin, Phone, Menu, X, User, Sparkles } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import reelaxIcon from "@/assets/reelax.png";
 
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +23,7 @@ export const Header = () => {
             <div className="container mx-auto px-4 py-4">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                        <Sparkles className="h-8 w-8 text-glow-primary" />
+                        <img src={reelaxIcon} alt="Reelax" className="w-10 h-10" />
                         <span className="text-2xl font-bold bg-gradient-hero bg-clip-text text-transparent">
                             Reelax
                         </span>
