@@ -72,7 +72,7 @@ export const Footer = () => {
                             </li>
                             <li className="flex items-center gap-2">
                                 <Mail className="h-4 w-4" />
-                                <span>support@glow.vn</span>
+                                <span>support@reelax.vn</span>
                             </li>
                             <li><a href="#" className="hover:text-glow-primary transition-colors">Tuyển dụng</a></li>
                             <li><a href="#" className="hover:text-glow-primary transition-colors">Đối tác</a></li>

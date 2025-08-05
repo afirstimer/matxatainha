@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Menu, X, User, Sparkles } from "lucide-react";
+import { MapPin, Phone, Menu, X, User } from "lucide-react";
+import reelaxIcon from "@/assets/reelax.png";
 import { useAuth } from "@/contexts/AuthContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import reelaxIcon from "@/assets/reelax.png";
 
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,25 +22,25 @@ export const Header = () => {
         <header className="bg-spa-cream border-b border-border sticky top-0 z-50">
             <div className="container mx-auto px-4 py-4">
                 <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
+                    <Link to="/" className="flex items-center">
                         <img src={reelaxIcon} alt="Reelax" className="w-10 h-10" />
                         <span className="text-2xl font-bold bg-gradient-hero bg-clip-text text-transparent">
                             Reelax
                         </span>
-                    </div>
+                    </Link>
 
                     <nav className="hidden md:flex items-center space-x-8">
                         <Link to="/" className="text-foreground hover:text-glow-primary transition-colors">
                             {t('nav.home')}
                         </Link>
-                        <Link to="/services" className="text-foreground hover:text-glow-primary transition-colors">
+                        <Link to="/dich-vu" className="text-foreground hover:text-glow-primary transition-colors">
                             {t('nav.services')}
                         </Link>
                         <Link to="/locations" className="text-foreground hover:text-glow-primary transition-colors">
                             {t('nav.locations')}
                         </Link>
-                        <Link to="#offers" className="text-foreground hover:text-glow-primary transition-colors">
-                            {t('nav.offers')}
+                        <Link to="/bai-viet" className="text-foreground hover:text-glow-primary transition-colors">
+                            {t('nav.blog') || 'Blog'}
                         </Link>
                     </nav>
 
@@ -97,11 +97,11 @@ export const Header = () => {
                             <Link to="/dich-vu" className="text-foreground hover:text-glow-primary transition-colors">
                                 {t('nav.services')}
                             </Link>
-                            <Link to="#locations" className="text-foreground hover:text-glow-primary transition-colors">
+                            <Link to="/locations" className="text-foreground hover:text-glow-primary transition-colors">
                                 {t('nav.locations')}
                             </Link>
-                            <Link to="#offers" className="text-foreground hover:text-glow-primary transition-colors">
-                                {t('nav.offers')}
+                            <Link to="/bai-viet" className="text-foreground hover:text-glow-primary transition-colors">
+                                {t('nav.blog') || 'Blog'}
                             </Link>
 
                             <div className="pt-4 border-t border-border space-y-3">

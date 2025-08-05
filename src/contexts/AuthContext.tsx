@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-export type UserRole = 'user' | 'shop';
+export type UserRole = 'user' | 'shop' | 'admin';
 
 export interface User {
     id: string;
@@ -42,6 +42,13 @@ const dummyUsers: User[] = [
         email: 'shop@example.com',
         name: 'Spa Mai Moon',
         role: 'shop',
+        rewardPoints: 0
+    },
+    {
+        id: '3',
+        email: 'admin@example.com',
+        name: 'Quản Trị Viên',
+        role: 'admin',
         rewardPoints: 0
     }
 ];

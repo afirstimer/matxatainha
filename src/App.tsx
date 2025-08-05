@@ -13,6 +13,9 @@ import Login from "./pages/Login";
 import BookingConfirmation from "./pages/BookingConfirmation";
 import UserDashboard from "./pages/UserDashboard";
 import ShopDashboard from "./pages/ShopDashboard";
+import AdminDashboard from "./pages/AdminDashboard";
+import Blog from "./pages/Blog";
+import BlogDetail from "./pages/BlogDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,10 +36,15 @@ const App = () => (
               <Route path="/dia-diem" element={<Locations />} />
               <Route path="/service/:id" element={<ServiceDetail />} />
               <Route path="/dich-vu/:id" element={<ServiceDetail />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/bai-viet" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogDetail />} />
+              <Route path="/bai-viet/:slug" element={<BlogDetail />} />
               <Route path="/login" element={<Login />} />
               <Route path="/booking-confirmation" element={<BookingConfirmation />} />
               <Route path="/user-dashboard" element={<UserDashboard />} />
               <Route path="/shop-dashboard" element={<ShopDashboard />} />
+              <Route path="/admin-dashboard" element={<AdminDashboard />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

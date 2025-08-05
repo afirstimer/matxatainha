@@ -36,7 +36,13 @@ const Login = () => {
                     title: "Đăng nhập thành công! 🎉",
                     description: `Chào mừng bạn quay lại`,
                 });
-                navigate(role === 'user' ? '/user-dashboard' : '/shop-dashboard');
+                if (role === 'user') {
+                    navigate('/user-dashboard');
+                } else if (role === 'shop') {
+                    navigate('/shop-dashboard');
+                } else if (role === 'admin') {
+                    navigate('/admin-dashboard');
+                }
             } else {
                 toast({
                     title: "Đăng nhập thất bại",
@@ -70,7 +76,13 @@ const Login = () => {
                     title: "Đăng ký thành công! 🎉",
                     description: role === 'user' ? "Bạn nhận được 100 điểm thưởng!" : "Chào mừng đến với Glow Vietnam",
                 });
-                navigate(role === 'user' ? '/user-dashboard' : '/shop-dashboard');
+                if (role === 'user') {
+                    navigate('/user-dashboard');
+                } else if (role === 'shop') {
+                    navigate('/shop-dashboard');
+                } else if (role === 'admin') {
+                    navigate('/admin-dashboard');
+                }
             } else {
                 toast({
                     title: "Đăng ký thất bại",
@@ -142,12 +154,22 @@ const Login = () => {
                                     {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
                                     Đăng nhập như Cửa hàng
                                 </Button>
+                                <Button
+                                    variant="secondary"
+                                    className="w-full"
+                                    onClick={() => handleLogin('admin')}
+                                    disabled={loading}
+                                >
+                                    {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+                                    Đăng nhập như Quản trị viên
+                                </Button>
                             </div>
 
                             <div className="text-sm text-muted-foreground text-center">
                                 <p>Tài khoản demo:</p>
                                 <p>Khách hàng: user@example.com</p>
                                 <p>Cửa hàng: shop@example.com</p>
+                                <p>Quản trị viên: admin@example.com</p>
                                 <p>Mật khẩu: bất kỳ</p>
                             </div>
                         </TabsContent>

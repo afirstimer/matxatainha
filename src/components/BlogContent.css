@@ -1,0 +1,27 @@
+.blog-content h2 {
+  @apply text-2xl font-bold text-foreground mt-8 mb-4;
+}
+
+.blog-content h3 {
+  @apply text-xl font-semibold text-foreground mt-6 mb-3;
+}
+
+.blog-content p {
+  @apply text-foreground leading-relaxed mb-4;
+}
+
+.blog-content ul {
+  @apply list-disc list-inside mb-4 space-y-2;
+}
+
+.blog-content li {
+  @apply text-foreground;
+}
+
+.blog-content strong {
+  @apply font-semibold text-foreground;
+}
+
+.blog-content a {
+  @apply text-glow-primary hover:underline;
+}
