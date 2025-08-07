@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 import massageIcon from "@/assets/massage-icon.jpg";
 import facialIcon from "@/assets/facial-icon.jpg";
 import beautyIcon from "@/assets/beauty-icon.jpg";
@@ -39,6 +40,17 @@ const services = [
 ];
 
 export const Services = () => {
+    const navigate = useNavigate();
+
+    const handleBookService = (serviceId: number) => {
+        if (serviceId === 1) { // Massage & Thư giãn
+            navigate('/therapists?filterGender=Female');
+        } else {
+            // For other services, navigate to service detail or booking
+            navigate(`/dich-vu/${serviceId}`);
+        }
+    };
+
     return (
         <section id="services" className="py-20 bg-spa-warm">
             <div className="container mx-auto px-4">
@@ -99,7 +111,11 @@ export const Services = () => {
                                     ))}
                                 </div>
 
-                                <Button className="w-full" variant="glow">
+                                <Button
+                                    className="w-full"
+                                    variant="glow"
+                                    onClick={() => handleBookService(service.id)}
+                                >
                                     Đặt lịch ngay
                                 </Button>
                             </CardContent>

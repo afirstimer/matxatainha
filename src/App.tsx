@@ -1,4 +1,5 @@
-import { Toaster } from "@/components/ui/toaster";
+import TherapistSelection from "@/pages/TherapistSelection";
+import { TherapistDetail } from "@/pages/TherapistDetail";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -25,10 +26,11 @@ const App = () => (
     <LanguageProvider>
       <AuthProvider>
         <TooltipProvider>
-          <Toaster />
           <Sonner />
           <BrowserRouter>
             <Routes>
+              <Route path="/therapists" element={<TherapistSelection />} />
+              <Route path="/therapist/:id" element={<TherapistDetail />} />
               <Route path="/" element={<Index />} />
               <Route path="/services" element={<Services />} />
               <Route path="/dich-vu" element={<Services />} />
