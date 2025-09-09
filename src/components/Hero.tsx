@@ -1,9 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Star, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/spa-hero.jpg";
 
 export const Hero = () => {
+    const navigate = useNavigate();
+
+    const handleBookNow = () => {
+        navigate('/therapists?filterGender=Female');
+    };
+
+    const handleExploreServices = () => {
+        navigate('/dich-vu');
+    };
+
     return (
         <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
             {/* Background */}
@@ -29,11 +40,21 @@ export const Hero = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                        <Button variant="glow" size="lg" className="text-lg px-8 py-6">
+                        <Button
+                            variant="glow"
+                            size="lg"
+                            className="text-lg px-8 py-6"
+                            onClick={handleBookNow}
+                        >
                             Đặt lịch ngay
                             <ArrowRight className="ml-2 h-5 w-5" />
                         </Button>
-                        <Button variant="elegant" size="lg" className="text-lg px-8 py-6">
+                        <Button
+                            variant="elegant"
+                            size="lg"
+                            className="text-lg px-8 py-6"
+                            onClick={handleExploreServices}
+                        >
                             Khám phá dịch vụ
                         </Button>
                     </div>
